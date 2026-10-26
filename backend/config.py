@@ -16,9 +16,11 @@ class Config:
     
     # Database: Supabase PostgreSQL in prod, SQLite default for local dev
     SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', f"sqlite:///{os.path.join(BASE_DIR, 'lunaflow.db')}")
-    # Handle Supabase / Heroku postgres:// -> postgresql://
+    # Handle Supabase / Render / Heroku postgres:// or postgresql:// -> postgresql+psycopg://
     if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
-        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql://", 1)
+        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql+psycopg://", 1)
+    elif SQLALCHEMY_DATABASE_URI.startswith("postgresql://") and not SQLALCHEMY_DATABASE_URI.startswith("postgresql+"):
+        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgresql://", "postgresql+psycopg://", 1)
         
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
