@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Base Palette */
+    --color-blush: #E8A1B0;
+    --color-rose: #F6DCE3;
+    --color-lavender: #E8E1F7;
+    --color-cream: #FFF9F4;
+    --color-sage: #C9D8C0;
+    --color-plum: #573B50;
+    --color-charcoal: #34313A;
+
+    /* Dynamic Theme Tokens */
+    --bg-primary: #FFF9F4;
+    --bg-surface: #FFFFFF;
+    --bg-surface-elevated: #FFFDFC;
+    --bg-surface-subtle: #FDF4EC;
+    --border-color: rgba(87, 59, 80, 0.08);
+    --border-hover: rgba(87, 59, 80, 0.18);
+    --text-primary: #34313A;
+    --text-secondary: #6B6470;
+    --text-muted: #9E97A3;
+
+    /* Default Accent (Blush) */
+    --accent-primary: #E8A1B0;
+    --accent-light: #F6DCE3;
+    --accent-dark: #C46D82;
+    --accent-glow: rgba(232, 161, 176, 0.35);
+  }
+
+  [data-accent="lavender"] {
+    --accent-primary: #B29FE8;
+    --accent-light: #E8E1F7;
+    --accent-dark: #866ACF;
+    --accent-glow: rgba(178, 159, 232, 0.35);
+  }
+
+  [data-accent="sage"] {
+    --accent-primary: #8CA67E;
+    --accent-light: #C9D8C0;
+    --accent-dark: #647E56;
+    --accent-glow: rgba(140, 166, 126, 0.35);
+  }
+
+  /* Dark Mode */
+  .dark {
+    --bg-primary: #1C1820;
+    --bg-surface: #26212C;
+    --bg-surface-elevated: #302A38;
+    --bg-surface-subtle: #2A2432;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(255, 255, 255, 0.16);
+    --text-primary: #F7F3F6;
+    --text-secondary: #C8C1CD;
+    --text-muted: #8E8795;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-heading);
+}
+
+/* Glassmorphism & Card Styles */
+.card-soft {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  box-shadow: 0 4px 20px -2px rgba(87, 59, 80, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-soft:hover {
+  border-color: var(--border-hover);
+}
+
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px -4px rgba(87, 59, 80, 0.09);
+}
+
+.glass-nav {
+  background: rgba(255, 249, 244, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dark .glass-nav {
+  background: rgba(28, 24, 32, 0.85);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.glass-bottom-nav {
+  background: rgba(255, 249, 244, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-color);
+}
+
+.dark .glass-bottom-nav {
+  background: rgba(28, 24, 32, 0.92);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(87, 59, 80, 0.15);
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Calendar Specific Badges and Styling */
+.period-day-active {
+  background: linear-gradient(135deg, #F6DCE3 0%, #E8A1B0 100%) !important;
+  color: #573B50 !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(232, 161, 176, 0.4);
+}
+
+.dark .period-day-active {
+  background: linear-gradient(135deg, #7A4254 0%, #573B50 100%) !important;
+  color: #FDF4EC !important;
+}
+
+.period-predicted-day {
+  border: 2px dashed #E8A1B0 !important;
+  background-color: rgba(246, 220, 227, 0.35) !important;
+  color: #573B50 !important;
+}
+
+.dark .period-predicted-day {
+  border: 2px dashed #B8677B !important;
+  background-color: rgba(87, 59, 80, 0.3) !important;
+  color: #F6DCE3 !important;
+}
+
+.fertile-window-day {
+  background-color: rgba(201, 216, 192, 0.4) !important;
+  border: 1px solid rgba(140, 166, 126, 0.5) !important;
+}
+
+.ovulation-day {
+  background: linear-gradient(135deg, #C9D8C0 0%, #A2C095 100%) !important;
+  color: #2F4228 !important;
+  font-weight: 700;
+}

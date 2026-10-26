@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "LunaFlow",
+    "tagline": "మీ చక్రం, మీ లయ",
+    "discreetName": "LF రిథమ్"
+  },
+  "nav": {
+    "home": "హోమ్",
+    "calendar": "క్యాలెండర్",
+    "insights": "విశ్లేషణలు",
+    "journal": "జర్నల్",
+    "settings": "సెట్టింగ్‌లు",
+    "login": "లాగిన్",
+    "register": "ప్రారంభించండి",
+    "logout": "లాగౌట్"
+  },
+  "phases": {
+    "menstrual": "పీరియడ్ దశ",
+    "follicular": "ఫోలిక్యులర్ దశ",
+    "ovulation": "ఓవులేషన్ దశ",
+    "luteal": "లూటియల్ దశ"
+  },
+  "dashboard": {
+    "greeting": "నమస్కారం, {{name}} 🌷",
+    "subgreeting": "ఈ రోజు మీ కోసం కొద్ది సమయం కేటాయించండి.",
+    "cycleDay": "చక్రం రోజు",
+    "nextPeriod": "తదుపరి అంచనా వేసిన పీరియడ్",
+    "phaseEstimate": "దశ అంచనా",
+    "moreDataNeeded": "ఖచ్చితమైన అంచనాకు మరిన్ని వివరాలు అవసరం",
+    "quickActions": "త్వరిత చర్యలు",
+    "logPeriod": "పీరియడ్ నమోదు చేయండి",
+    "logSymptoms": "లక్షణాలు నమోదు చేయండి",
+    "openCalendar": "క్యాలెండర్ తెరవండి",
+    "viewHistory": "చరిత్రను చూడండి",
+    "disclaimer": "LunaFlow వ్యక్తిగత ఆరోగ్యాన్ని ట్రాక్ చేయడానికి మాత్రమే, వైద్య నిర్ధారణ లేదా గర్భనిరోధకం కోసం కాదు."
+  },
+  "calendar": {
+    "today": "ఈరోజు",
+    "markPeriod": "పీరియడ్ గుర్తు పెట్టండి",
+    "legendPeriod": "పీరియడ్ ప్రవాహం",
+    "legendPredicted": "అంచనా",
+    "legendFertile": "సంతానోత్పత్తి సమయం",
+    "legendSymptoms": "నమోదైన లక్షణాలు",
+    "noRecords": "ఈ తేదీకి ఎటువంటి సమాచారం లేదు."
+  },
+  "symptoms": {
+    "cramps": "నొప్పులు",
+    "bloating": "కడుపు ఉబ్బరం",
+    "headache": "తలనొప్పి",
+    "backPain": "వెన్నునొప్పి",
+    "fatigue": "అలసట",
+    "acne": "మొటిమలు",
+    "breastTenderness": "రొమ్ము సున్నితత్వం",
+    "nausea": "వికారం",
+    "cravings": "కోరికలు"
+  },
+  "moods": {
+    "happy": "సంతోషంగా",
+    "calm": "ప్రశాంతంగా",
+    "energetic": "ఉత్సాహంగా",
+    "anxious": "ఆందోళనగా",
+    "irritable": "చిరాకుగా",
+    "sad": "విచారంగా",
+    "tired": "అలసిపోయినట్లు"
+  }
+}

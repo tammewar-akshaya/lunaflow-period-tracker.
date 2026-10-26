@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "LunaFlow",
+    "tagline": "Your Cycle, Your Rhythm",
+    "discreetName": "LF Rhythm"
+  },
+  "nav": {
+    "home": "Home",
+    "calendar": "Calendar",
+    "insights": "Insights",
+    "journal": "Journal",
+    "settings": "Settings",
+    "login": "Sign In",
+    "register": "Get Started",
+    "logout": "Log Out"
+  },
+  "phases": {
+    "menstrual": "Menstrual Phase",
+    "follicular": "Follicular Phase",
+    "ovulation": "Ovulatory Phase",
+    "luteal": "Luteal Phase"
+  },
+  "dashboard": {
+    "greeting": "Hello, {{name}} 🌷",
+    "subgreeting": "Take a moment for yourself today.",
+    "cycleDay": "Cycle Day",
+    "nextPeriod": "Next Predicted Period",
+    "phaseEstimate": "Phase Estimate",
+    "moreDataNeeded": "More cycle data needed for estimate",
+    "quickActions": "Quick Actions",
+    "logPeriod": "Log Period",
+    "logSymptoms": "Record Symptoms",
+    "openCalendar": "Open Calendar",
+    "viewHistory": "View History",
+    "disclaimer": "LunaFlow is for personal wellness tracking only, not for medical diagnosis or contraception."
+  },
+  "calendar": {
+    "today": "Today",
+    "markPeriod": "Mark Period",
+    "legendPeriod": "Period Flow",
+    "legendPredicted": "Predicted",
+    "legendFertile": "Fertile Window",
+    "legendSymptoms": "Logged Symptoms",
+    "noRecords": "No entries for this date."
+  },
+  "symptoms": {
+    "cramps": "Cramps",
+    "bloating": "Bloating",
+    "headache": "Headache",
+    "backPain": "Back Pain",
+    "fatigue": "Fatigue",
+    "acne": "Acne",
+    "breastTenderness": "Breast Tenderness",
+    "nausea": "Nausea",
+    "cravings": "Cravings"
+  },
+  "moods": {
+    "happy": "Happy",
+    "calm": "Calm",
+    "energetic": "Energetic",
+    "anxious": "Anxious",
+    "irritable": "Irritable",
+    "sad": "Sad",
+    "tired": "Tired"
+  }
+}

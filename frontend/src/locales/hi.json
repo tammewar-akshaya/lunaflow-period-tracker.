@@ -1,0 +1,66 @@
+{
+  "app": {
+    "name": "LunaFlow",
+    "tagline": "आपका चक्र, आपकी लय",
+    "discreetName": "LF रिदम"
+  },
+  "nav": {
+    "home": "होम",
+    "calendar": "कैलेंडर",
+    "insights": "आंकड़े",
+    "journal": "डायरी",
+    "settings": "सेटिंग्स",
+    "login": "लॉग इन",
+    "register": "शुरू करें",
+    "logout": "लॉग आउट"
+  },
+  "phases": {
+    "menstrual": "मासिक धर्म चरण",
+    "follicular": "फॉलिक्युलर चरण",
+    "ovulation": "ओव्यूलेशन चरण",
+    "luteal": "ल्यूटियल चरण"
+  },
+  "dashboard": {
+    "greeting": "नमस्ते, {{name}} 🌷",
+    "subgreeting": "आज अपने लिए थोड़ा समय निकालें।",
+    "cycleDay": "चक्र का दिन",
+    "nextPeriod": "अगली अपेक्षित अवधि",
+    "phaseEstimate": "चरण अनुमान",
+    "moreDataNeeded": "अनुमान के लिए अधिक डेटा आवश्यक है",
+    "quickActions": "त्वरित क्रियाएं",
+    "logPeriod": "मासिक धर्म दर्ज करें",
+    "logSymptoms": "लक्षण दर्ज करें",
+    "openCalendar": "कैलेंडर खोलें",
+    "viewHistory": "इतिहास देखें",
+    "disclaimer": "LunaFlow केवल व्यक्तिगत स्वास्थ्य ट्रैकिंग के लिए है, चिकित्सा निदान या गर्भनिरोधक के लिए नहीं।"
+  },
+  "calendar": {
+    "today": "आज",
+    "markPeriod": "मासिक धर्म चिह्नित करें",
+    "legendPeriod": "अवधि प्रवाह",
+    "legendPredicted": "अपेक्षित",
+    "legendFertile": "प्रजनन खिड़की",
+    "legendSymptoms": "दर्ज लक्षण",
+    "noRecords": "इस तिथि के लिए कोई प्रविष्टि नहीं।"
+  },
+  "symptoms": {
+    "cramps": "ऐंठन (क्रैम्प्स)",
+    "bloating": "पेट फूलना",
+    "headache": "सिरदर्द",
+    "backPain": "पीठ दर्द",
+    "fatigue": "थकान",
+    "acne": "मुंहासे",
+    "breastTenderness": "स्तन संवेदनशीलता",
+    "nausea": "जी मिचलाना",
+    "cravings": "लालसा"
+  },
+  "moods": {
+    "happy": "प्रसन्न",
+    "calm": "शांत",
+    "energetic": "ऊर्जावान",
+    "anxious": "चिंतित",
+    "irritable": "चिड़चिड़ा",
+    "sad": "उदास",
+    "tired": "थका हुआ"
+  }
+}
