@@ -2,9 +2,40 @@ import os
 from datetime import timedelta
 from dotenv import load_dotenv
 
-load_dotenv()
-
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, '..'))
+
+# Load .env from project root and backend directory if present
+load_dotenv(os.path.join(ROOT_DIR, '.env'))
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+
+def _build_database_uri() -> str:
+    uri = os.getenv('DATABASE_URL', '').strip() or f"sqlite:///{os.path.join(BASE_DIR, 'lunaflow.db')}"
+    # Handle Supabase / Render / Heroku postgres:// or postgresql:// -> postgresql+psycopg://
+    if uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql+psycopg://", 1)
+    elif uri.startswith("postgresql://") and not uri.startswith("postgresql+"):
+        uri = uri.replace("postgresql://", "postgresql+psycopg://", 1)
+    return uri
+
+def _build_engine_options(database_uri: str) -> dict:
+    if not database_uri.startswith("postgresql"):
+        return {}
+
+    connect_args = {}
+    if "sslmode=" not in database_uri:
+        connect_args["sslmode"] = "require"
+    # Supavisor transaction mode (:6543) does not support server-side prepared statements
+    if ":6543/" in database_uri:
+        connect_args["prepare_threshold"] = None
+
+    options = {
+        "pool_pre_ping": True,
+        "pool_recycle": 300,
+    }
+    if connect_args:
+        options["connect_args"] = connect_args
+    return options
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'lunaflow-super-secret-key-change-in-production-2026')
@@ -15,12 +46,8 @@ class Config:
     JWT_HEADER_TYPE = 'Bearer'
     
     # Database: Supabase PostgreSQL in prod, SQLite default for local dev
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', f"sqlite:///{os.path.join(BASE_DIR, 'lunaflow.db')}")
-    # Handle Supabase / Render / Heroku postgres:// or postgresql:// -> postgresql+psycopg://
-    if SQLALCHEMY_DATABASE_URI.startswith("postgres://"):
-        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgres://", "postgresql+psycopg://", 1)
-    elif SQLALCHEMY_DATABASE_URI.startswith("postgresql://") and not SQLALCHEMY_DATABASE_URI.startswith("postgresql+"):
-        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace("postgresql://", "postgresql+psycopg://", 1)
+    SQLALCHEMY_DATABASE_URI = _build_database_uri()
+    SQLALCHEMY_ENGINE_OPTIONS = _build_engine_options(SQLALCHEMY_DATABASE_URI)
         
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     

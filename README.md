@@ -174,9 +174,10 @@ Create `.env` based on `.env.example`:
 
 ### 1. Database (Supabase PostgreSQL)
 1. Create a free project on [Supabase](https://supabase.com).
-2. Under Project Settings -> Database, copy your **URI** connection string:
-   `postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-REF].supabase.co:5432/postgres`
-3. Set this as `DATABASE_URL` in your backend environment.
+2. Click **Connect** at the top of your Supabase Dashboard and copy your **Session Pooler** URI (recommended for IPv4 compatibility on Windows, Render, and other hosts):
+   `postgresql://postgres.[YOUR-REF]:[YOUR-PASSWORD]@aws-0-[REGION].pooler.supabase.com:5432/postgres?sslmode=require`
+   *(Note: The direct `db.[YOUR-REF].supabase.co:5432` endpoint requires IPv6 unless you enable the IPv4 add-on.)*
+3. Set this as `DATABASE_URL` in your `.env` (local) and backend hosting environment.
 
 ### 2. Backend (Render / Railway / Fly.io)
 1. Connect your Git repository to Render.
